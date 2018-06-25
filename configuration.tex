@@ -1,0 +1,472 @@
+%!TEX root = ./thesis.tex
+
+%General
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+%\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\Po}{\mathbb{P}}
+\renewcommand{\G}{\mathbb{G}}
+
+%Uppercase Bold Letters
+\newcommand{\bfA}{\mathbf{A}}
+\newcommand{\bfB}{\mathbf{B}}
+\newcommand{\bfC}{\mathbf{C}}
+\newcommand{\bfD}{\mathbf{D}}
+\newcommand{\bfE}{\mathbf{E}}
+\newcommand{\bfF}{\mathbf{F}}
+\newcommand{\bfG}{\mathbf{G}}
+\newcommand{\bfH}{\mathbf{H}}
+\newcommand{\bfI}{\mathbf{I}}
+\newcommand{\bfJ}{\mathbf{J}}
+\newcommand{\bfK}{\mathbf{K}}
+\newcommand{\bfL}{\mathbf{L}}
+\newcommand{\bfM}{\mathbf{M}}
+\newcommand{\bfN}{\mathbf{N}}
+\newcommand{\bfO}{\mathbf{O}}
+\newcommand{\bfP}{\mathbf{P}}
+\newcommand{\bfQ}{\mathbf{Q}}
+\newcommand{\bfR}{\mathbf{R}}
+\newcommand{\bfS}{\mathbf{S}}
+\newcommand{\bfT}{\mathbf{T}}
+\newcommand{\bfU}{\mathbf{U}}
+\newcommand{\bfV}{\mathbf{V}}
+\newcommand{\bfW}{\mathbf{W}}
+\newcommand{\bfX}{\mathbf{X}}
+\newcommand{\bfY}{\mathbf{Y}}
+\newcommand{\bfZ}{\mathbf{Z}}
+
+
+
+\newcommand{\Zn}[1]{\mathbb{Z}/#1\mathbb{Z}}
+\newcommand{\Znx}[1]{(\mathbb{Z}/#1\mathbb{Z})^\times}
+\newcommand{\X}{\times}
+\newcommand{\set}[2]{\left\{#1 : #2\right\}}
+\newcommand{\sett}[1]{\left\{#1\right\}}
+\newcommand{\nonempty}{\neq\varnothing}
+\newcommand{\ds}{\displaystyle}
+%\newcommand{\abs}[1]{\left| {#1} \right|}
+\newcommand{\qedbox}{\rule{2mm}{2mm}}
+\renewcommand{\qedsymbol}{\qedbox}
+\newcommand{\lto}{\longrightarrow}
+\newcommand{\aand}{\qquad\hbox{and}\qquad}
+\newcommand{\e}{\varepsilon}
+\newcommand{\be}[1]{\emph{\textbf{#1}}}
+\newcommand{\tto}{\rightrightarrows}
+\newcommand{\gs}{\geqslant}
+\newcommand{\ls}{\leqslant}
+%\renewcommand{\tilde}{\widetilde}
+%\renewcommand{\hat}{\widehat}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+
+%Crypto
+\newcommand{\ord}{\mathsf{ord}}    %order
+\newcommand{\Prob}{\mathsf{Prob}}  %probability
+\newcommand{\Var}{\mathsf{Var}}    %variance
+\newcommand{\Ev}{\mathsf{E}}       %expectation
+\newcommand{\Adv}{\mathsf{Adv}}    %advantage
+\newcommand{\negl}{\mathsf{negl}}  %negligible function
+\newcommand{\out}{\mathsf{out}}    %output
+
+\newcommand{\Gen}{\textsf{GGen}}          %group generator
+\newcommand{\kgen}{\textsf{Gen}}          %key generator
+\newcommand{\verify}{\textsf{Verify}}
+\newcommand{\commit}{\textsf{Commit}}
+\newcommand{\sign}{\textsf{Sign}}
+\newcommand{\blind}{\textsf{Blind}}
+\newcommand{\unblind}{\textsf{Unblind}}
+
+\newcommand{\dsy}{\displaystyle}
+\newcommand{\mtt}{\mathtt}
+\newcommand{\defn}[1]{\textbf{\emph{#1}}}
+
+\newcommand{\subdh}{ {\mbox{\scriptsize{DDH}}} } % DDH subscript
+\newcommand{\subbdh}{ {\mbox{\scriptsize{BDDH}}} } % BDDH subscript
+
+\newcommand{\rselect}{\xleftarrow{\mathtt{r}}}
+\newcommand{\ppar}[1]{\left( {#1} \right)}
+\newcommand{\brac}[1]{\left[ {#1} \right]}
+\renewcommand\T{\rule{0pt}{2.5ex}}          % Adds a space between the text and the [T]op \hline
+\renewcommand\B{\rule[-1.1ex]{0pt}{0pt}}    % Adds a space between the text and the [B]ottom \hline
+
+
+\makeatletter
+\def\RightExtendSymbol#1#2#3#4#5{\ext@arrow 0359{\arrowfill@#1#2#3}{#4}{#5}}
+\makeatother
+\newcommand\llrightarrow[2][]{\RightExtendSymbol{-}{-}{\rightarrow}{#1}{#2}}
+\newcommand\llleftarrow[2][]{\RightExtendSymbol{\leftarrow}{-}{-}{#1}{#2}}
+
+
+
+
+
+\newcommand{\cell}{\phantom{1insssssss}}
+\newcommand{\fto}[1]{\xrightarrow{\hspace{4pt} #1 \hspace{4pt}}}
+\newcommand{\flto}[1]{\xrightarrow{\quad #1 \quad}}
+
+%Euler Script Characters
+\newcommand{\esa}{\EuScript{A}}
+\newcommand{\esb}{\EuScript{B}}
+\newcommand{\esc}{\EuScript{C}}
+\newcommand{\esd}{\EuScript{D}}
+\newcommand{\ese}{\EuScript{E}}
+\newcommand{\esf}{\EuScript{F}}
+\newcommand{\esg}{\EuScript{G}}
+\newcommand{\esH}{\EuScript{H}}
+\newcommand{\esi}{\EuScript{I}}
+\newcommand{\esj}{\EuScript{J}}
+\newcommand{\esk}{\EuScript{K}}
+\newcommand{\esl}{\EuScript{L}}
+\newcommand{\esm}{\EuScript{M}}
+\newcommand{\esn}{\EuScript{N}}
+\newcommand{\eso}{\EuScript{O}}
+\newcommand{\esp}{\EuScript{P}}
+\newcommand{\esq}{\EuScript{Q}}
+\newcommand{\esr}{\EuScript{R}}
+\newcommand{\ess}{\EuScript{S}}
+\newcommand{\est}{\EuScript{T}}
+\newcommand{\esu}{\EuScript{U}}
+\newcommand{\esv}{\EuScript{V}}
+\newcommand{\esw}{\EuScript{W}}
+\newcommand{\esx}{\EuScript{X}}
+\newcommand{\esy}{\EuScript{Y}}
+\newcommand{\esz}{\EuScript{Z}}
+
+%Calligraphic Characters
+\newcommand{\cala}{\mathcal{A}}
+\newcommand{\calb}{\mathcal{B}}
+\newcommand{\calc}{\mathcal{C}}
+\newcommand{\cald}{\mathcal{D}}
+\newcommand{\cale}{\mathcal{E}}
+\newcommand{\calf}{\mathcal{F}}
+\newcommand{\calg}{\mathcal{G}}
+\newcommand{\calh}{\mathcal{H}}
+\newcommand{\cali}{\mathcal{I}}
+\newcommand{\calj}{\mathcal{J}}
+\newcommand{\calk}{\mathcal{K}}
+\newcommand{\call}{\mathcal{L}}
+\newcommand{\calm}{\mathcal{M}}
+\newcommand{\caln}{\mathcal{N}}
+\newcommand{\calo}{\mathcal{O}}
+\newcommand{\calp}{\mathcal{P}}
+\newcommand{\calq}{\mathcal{Q}}
+\newcommand{\calr}{\mathcal{R}}
+\newcommand{\cals}{\mathcal{S}}
+\newcommand{\calt}{\mathcal{T}}
+\newcommand{\calu}{\mathcal{U}}
+\newcommand{\calv}{\mathcal{V}}
+\newcommand{\calw}{\mathcal{W}}
+\newcommand{\calx}{\mathcal{X}}
+\newcommand{\caly}{\mathcal{Y}}
+\newcommand{\calz}{\mathcal{Z}}
+
+%Uppercase Roman characters
+\newcommand{\rmA}{\mathrm{A}}
+\newcommand{\rmB}{\mathrm{B}}
+\newcommand{\rmC}{\mathrm{C}}
+\newcommand{\rmD}{\mathrm{D}}
+\newcommand{\rmE}{\mathrm{E}}
+\newcommand{\rmF}{\mathrm{F}}
+\newcommand{\rmG}{\mathrm{G}}
+\newcommand{\rmH}{\mathrm{H}}
+\newcommand{\rmI}{\mathrm{I}}
+\newcommand{\rmJ}{\mathrm{J}}
+\newcommand{\rmK}{\mathrm{K}}
+\newcommand{\rmL}{\mathrm{L}}
+\newcommand{\rmM}{\mathrm{M}}
+\newcommand{\rmN}{\mathrm{N}}
+\newcommand{\rmO}{\mathrm{O}}
+\newcommand{\rmP}{\mathrm{P}}
+\newcommand{\rmQ}{\mathrm{Q}}
+\newcommand{\rmR}{\mathrm{R}}
+\newcommand{\rmS}{\mathrm{S}}
+\newcommand{\rmT}{\mathrm{T}}
+\newcommand{\rmU}{\mathrm{U}}
+\newcommand{\rmV}{\mathrm{V}}
+\newcommand{\rmW}{\mathrm{W}}
+\newcommand{\rmX}{\mathrm{X}}
+\newcommand{\rmY}{\mathrm{Y}}
+\newcommand{\rmZ}{\mathrm{Z}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+
+% \abs{\frac{x}{y}}        \quad same as \lvert\frac{x}{y}\rvert
+% \abs[\Big]{\frac{x}{y}}  \quad same as \Bigl|\frac{x}{y}\Bigr|
+% \abs*{\frac{x}{y}}         same as \left|\frac{x}{y}\right|
+
+%Customized Theorem Environments
+\newtheoremstyle%
+{custom}%
+{}%                         Space above
+{}%						     Space below
+{}%							 Body font
+{}%                         Indent amount
+{}%                         Theorem head font
+{.}%                        Punctuation after heading
+{ }%                        Space after heading
+{\thmname{}%                Additional specifications for theorem head
+\thmnumber{}%
+\thmnote{\bfseries #3}}%
+
+\newtheoremstyle%
+{Theorem}%
+{}%
+{}%
+{\itshape}%
+{}%
+{}%
+{.}%
+{ }%
+{\thmname{\bfseries #1}%
+\thmnumber{\;\bfseries #2}%
+\thmnote{\;(\bfseries #3)}}%
+
+%Theorem Environments
+\theoremstyle{Theorem}
+\newtheorem{thm}{Theorem}[subsection]
+\newtheorem{prop}{Proposition}[subsection]
+\theoremstyle{definition}
+\newtheorem{dfn}{Definition}[subsection]
+\newtheorem*{ex}{Example}
+\newtheorem*{remark}{Remark}
+\theoremstyle{Lemma}
+\newtheorem{lemma}{Lemma}[subsection]
+\theoremstyle{remark}
+\newtheorem*{note}{Note}
+\theoremstyle{definition}
+\newtheorem*{notation}{Notation}
+\theoremstyle{custom}
+\newtheorem*{cust}{Definition}
+
+% Tikz %
+
+\newcommand{\arrowthis}[2]{
+        \tikz[remember picture,baseline]{\node[anchor=base,inner sep=0,outer sep=0]%
+        (#1) {\underline{#1}};
+        \node[overlay,single arrow,draw=none,fill=red!50,anchor=tip,rotate=60]
+        at (#1.south) {#2};}%
+    }%
+
+\newcommand{\speechthis}[2]{
+        \tikz[remember picture,baseline]{\node[anchor=base,inner sep=0,outer sep=0]%
+        (#1) {\underline{#1}};\node[overlay,ellipse callout,fill=blue!50]
+        at ($(#1.north)+(-.5cm,0.8cm)$) {#2};}%
+    }%
+
+\newcommand{\bubblethis}[2]{
+        \tikz[remember picture,baseline]{\node[anchor=base,inner sep=0,outer sep=0]%
+        (#1) {\underline{#1}};\node[overlay,cloud callout,callout relative pointer={(0.2cm,-0.7cm)},%
+        aspect=2.5,fill=yellow!90] at ($(#1.north)+(-0.5cm,1.6cm)$) {#2};}%
+    }%
+
+\newcommand{\pointthis}[2]{
+        \tikz[remember picture,baseline]{\node[anchor=base,inner sep=0,outer sep=0]%
+        (#1) {\underline{#1}};\node[overlay,rectangle callout,%
+        callout relative pointer={(0.2cm,0.7cm)},fill=green!50] at ($(#1.north)+(-.5cm,-1.4cm)$) {#2};}%
+        }%
+
+%
+% Solidity listings format
+% (https://github.com/s-tikhomirov/solidity-latex-highlighting/blob/master/solidity-highlighting.tex)
+%
+
+\definecolor{verylightgray}{rgb}{.97,.97,.97}
+
+\lstdefinelanguage{Solidity}{
+	keywords=[1]{
+    anonymous, assembly, assert, balance, break, call, callcode, case, catch, class, constant, continue, contract, debugger, default, delegatecall, delete, do, else, event, export, external, false, finally, for, function, gas, if, implements, import, in, indexed, instanceof, interface, internal, is, length, library, log0, log1, log2, log3, log4, memory, modifier, new, payable, pragma, private, protected, public, pure, push, require, return, returns, revert, selfdestruct, send, storage, struct, suicide, super, switch, then, this, throw, transfer, true, try, typeof, using, value, view, while, with, addmod, ecrecover, keccak256, mulmod, ripemd160, sha256, sha3
+  }, % generic keywords including crypto operations
+	keywordstyle=[1]\color{blue}\bfseries,
+	keywords=[2]{address, bool, byte, bytes, bytes1, bytes2, bytes3, bytes4, bytes5, bytes6, bytes7, bytes8, bytes9, bytes10, bytes11, bytes12, bytes13, bytes14, bytes15, bytes16, bytes17, bytes18, bytes19, bytes20, bytes21, bytes22, bytes23, bytes24, bytes25, bytes26, bytes27, bytes28, bytes29, bytes30, bytes31, bytes32, enum, int, int8, int16, int24, int32, int40, int48, int56, int64, int72, int80, int88, int96, int104, int112, int120, int128, int136, int144, int152, int160, int168, int176, int184, int192, int200, int208, int216, int224, int232, int240, int248, int256, mapping, string, uint, uint8, uint16, uint24, uint32, uint40, uint48, uint56, uint64, uint72, uint80, uint88, uint96, uint104, uint112, uint120, uint128, uint136, uint144, uint152, uint160, uint168, uint176, uint184, uint192, uint200, uint208, uint216, uint224, uint232, uint240, uint248, uint256, var, void, ether, finney, szabo, wei, days, hours, minutes, seconds, weeks, years},	% types; money and time units
+	keywordstyle=[2]\color{teal}\bfseries,
+	keywords=[3]{block, blockhash, coinbase, difficulty, gaslimit, number, timestamp, msg, data, gas, sender, sig, value, now, tx, gasprice, origin},	% environment variables
+	keywordstyle=[3]\color{violet}\bfseries,
+	identifierstyle=\color{black},
+	sensitive=false,
+	comment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	commentstyle=\color{gray}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	morestring=[b]',
+	morestring=[b]"
+}
+
+\lstset{
+	language=Solidity,
+	backgroundcolor=\color{white},
+	extendedchars=true,
+	basicstyle=\footnotesize\ttfamily,
+	showstringspaces=false,
+	showspaces=false,
+	numbers=none,
+	numberstyle=\footnotesize,
+	numbersep=9pt,
+	tabsize=2,
+	breaklines=true,
+	showtabs=false,
+	captionpos=b,
+}
+
+% Listing -> Code
+\renewcommand*{\lstlistlistingname}{List of Source Codes}
+\renewcommand{\lstlistingname}{Code}
+
+% Tikz %
+
+\tikzset{%
+    database/.style={%
+        cylinder, shape border rotate=90, aspect=0.5, draw, fill=green!30
+    },
+    node/.style={%
+        rectangle, minimum width=4cm, minimum height=1cm, text centered, draw=black, draw, fill=blue!30
+    },
+    blockchain/.style={%
+        draw,rectangle,minimum width=\textwidth, minimum height=1cm,anchor=west, fill=orange!30
+    },
+    tx/.style={%
+        circle,draw, minimum size=2cm
+    },
+    bl_block/.style={%
+        rectangle,draw,minimum width=2cm,minimum height=1cm
+    },
+    process/.style={%
+        fill=red!30
+    },
+    txt/.style={},
+    entity/.style={%
+      draw, minimum height=1cm, minimum width=4cm, fill=blue!30
+    },
+    com/.style={%
+      <->
+    },
+    block/.style={%
+      draw,thick,inner sep=10pt
+    },
+    barstyle/.style 2 args={%
+      draw,
+      minimum height=3em,
+      fill=orange!30,
+      fit={(#1.west) (#1.east)}, inner sep=0pt, label={center:#2}
+    },
+    cipher/.style={%
+      draw, minimum size=4em, align=center
+    },
+    account_block/.style={%
+      rectangle,draw,minimum width=2cm,minimum height=1cm,anchor=south west
+    },
+    execution_entity/.style={%
+        rectangle, minimum width=2cm, minimum height=1cm, text centered, draw=black, draw, fill=orange!30
+    },
+    execution_process/.style={%
+        ellipse, minimum width=2cm, minimum height=1cm, text centered, draw=black, draw, fill=green!30, align=center, font=\small
+    },
+    execution_operation/.style={%
+        rectangle, minimum width=2cm, minimum height=1cm, text centered, draw=black, draw, fill=gray!30
+    },
+    execution_label/.style={%
+        node distance=1.5cm, align=center, font=\small
+    },
+}
+
+\pgfplotsset{%
+  bar/.style={%
+  ybar,
+  enlargelimits=0.15,
+  legend style={at={(0.5,-0.35)},
+  anchor=north,legend columns=-1},
+  ylabel={Gas},
+  ylabel near ticks,
+  symbolic x coords={Data storage, Hash pointer, Data logging, Hash pointer logging},
+  x tick label style={font=\small,text width=1.7cm,align=center}, xtick=data, nodes near coords,
+  nodes near coords align={vertical}
+}
+}
+
+% algorithm %
+
+\def\Let#1#2{\State $#1\gets#2$}
+
+% TOC %
+
+\makeatletter
+\begingroup
+  \let\newcounter\@gobble
+  \let\setcounter\@gobbletwo
+  \globaldefs\@ne
+  \let\c@loadepth\@ne
+  \newlistof{algorithms}{loa}{\listalgorithmname}
+\endgroup
+\let\l@algorithm\l@algorithms
+\makeatother
+
+\makeatletter
+\begingroup
+  \let\newcounter\@gobble
+  \let\setcounter\@gobbletwo
+  \globaldefs\@ne
+  \let\c@loldepth\@ne
+  \newlistof{listings}{lol}{\lstlistlistingname}
+\endgroup
+\let\l@lstlisting\l@listings
+\makeatother
+
+% Remove empty lines between TOC entries %
+
+\makeatletter
+\def\@chapter[#1]#2{
+  \ifnum \c@secnumdepth >\m@ne
+      \refstepcounter{chapter}%
+      \typeout{\@chapapp\space\thechapter.}%
+      \addcontentsline{toc}{chapter}%
+                {\protect\numberline{\thechapter}#1}%
+ \else
+   \addcontentsline{toc}{chapter}{#1}%
+ \fi
+ \chaptermark{#1}%
+ \if@twocolumn
+   \@topnewpage[\@makechapterhead{#2}]%
+ \else
+   \@makechapterhead{#2}%
+   \@afterheading
+ \fi
+}
+\makeatother
+
+\renewcommand{\lstlistoflistings}{\listoflistings}
+%\renewcommand{\cftlistingsfont}{\itshape}
+
+\renewcommand{\cftsecfont}{\normalfont\bfseries}% section titles in bold
+\renewcommand{\cftfignumwidth}{5em}
+\renewcommand{\cftfigpresnum}{Figure }
+\renewcommand{\cftfigaftersnum}{:}
+
+\renewcommand{\cfttabnumwidth}{4.5em}
+\renewcommand{\cfttabpresnum}{Table }
+\renewcommand{\cfttabaftersnum}{:}
+
+\renewcommand{\cftalgorithmsnumwidth}{6em}
+\renewcommand{\cftalgorithmspresnum}{Algorithm }
+\renewcommand{\cftalgorithmsaftersnum}{:}
+
+\renewcommand{\cftlistingsnumwidth}{4.5em}
+\renewcommand{\cftlistingspresnum}{Code }
+\renewcommand{\cftlistingsaftersnum}{:}
+
+% Various %
+
+\newcommand*\xor{\oplus}
+\newcommand{\epar}[1]{\paragraph{#1}\mbox{}\\}
+\newcommand{\tx}{\mathsf{tx}}
+\newcommand{\CommentLine}[1]{
+    \State \(\triangleright\) \text{#1}
+}

@@ -1,0 +1,125 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+% thesis.tex
+%
+% Enjoy, evolve, and share!
+%
+% Compile it as follows:
+%	xelatex demo.tex
+%   bibtex demo.aux
+%   bibtex lop.aux (run this, only if you pass option 'lop' below)
+%   xelatex demo.tex && xelatex demo.tex
+%
+% Alternatively, compile it using `make -i' (see the provided Makefile).
+%
+% Check file `dithesis.cls' for other configuration options.
+%
+\documentclass[ack,openany]{dithesis}
+
+%\usepackage{graphicx}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% User-specific package inclusions %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{booktabs}
+\PassOptionsToPackage{hyphens}{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage{hyperref}
+\hypersetup{
+    unicode=true,                     % non-Latin characters in bookmarks
+    pdffitwindow=true,                % page fit to window when opened
+    pdfnewwindow=true,                % links in new window
+    pdfkeywords={},                   % list of keywords
+    colorlinks=true,                  % false: boxed links; true: colored links
+    linkcolor=black,                  % color of internal links
+    citecolor=black,                  % color of links to bibliography
+    filecolor=black,                  % color of file links
+    urlcolor=black,                   % color of external links
+    pdftitle={},                      % title
+    pdfauthor={},                     % author
+    breaklinks=true,                  % break links
+    pdfsubject={}                     % subject of the document
+}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc,shapes,trees,arrows,fit,graphs,positioning, matrix}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{euscript}
+\usepackage{enumitem}
+\usepackage{amsfonts}
+\usepackage{fontspec}
+\usepackage{mathtools}
+\usepackage{csquotes}
+\usepackage[font=footnotesize, labelfont=bf, textfont=bf, justification=centering]{caption}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{makecell}
+\usepackage{pgfplots}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{chngcntr}
+\usepackage{cite}
+\usepackage[titles]{tocloft}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%% User-specific configuration %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{configuration}
+
+\def\UrlBreaks{ % break hex url
+    \do\a\do\b\do\c\do\d\do\e\do\f
+    \do\0\do\1\do\2\do\3\do\4\do\5\do\6\do\7\do\8\do\9
+    \do\*\do\-\do\~\do\'\do\"\do\-
+  }
+
+%
+% Set the .bib file containing your paper publications (leave the extension out)
+%
+% This is optional, but it should be specified when option 'lop' is passed to
+% the document class.
+%
+% Then, inside the document environment, you may use the command '\nocitelop' to
+% site your papers, as you would traditionally do with the commands '\cite' or
+% '\nocite'.
+%
+% The papers are printed in reverse chronological order.
+%
+%\lopfile{mypapers/pubs}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Required Metadata %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+% counting
+
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+\counterwithout{lstlisting}{chapter}
+
+% the front matter
+
+\frontmatter
+
+% site my papers
+%\nocitelop{}
+
+\mainmatter
+
+% include each chapter...
+% \setcounter{chapter}{-1}  % start chapter numbering at 0
+\include{chapters/introduction}
+\include{chapters/future_work}
+\include{chapters/related_work}
+\include{chapters/conclusion}
+
+\backmatter
+
+\end{document}
